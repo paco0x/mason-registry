@@ -10,7 +10,11 @@ categories:
   - LSP
 
 source:
-  id: pkg:npm/vscode-solidity-server@0.0.171
+  id: pkg:github/juanfranblanco/vscode-solidity@master
+  build:
+    run: |
+      npm ci
+      npm run build:cli
 
 bin:
-  vscode-solidity-server: npm:vscode-solidity-server
+  vscode-solidity-server: node:dist/cli/server.js
